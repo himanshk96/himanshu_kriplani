@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "Clothing TryOn",
+    "slug": "clothing-tryon",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#16213e"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.clothingtryon.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs camera access to capture photos for virtual clothing try-on.",
+        "NSPhotoLibraryUsageDescription": "This app needs photo library access to save your try-on results.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs permission to save try-on images to your gallery.",
+        "UIBackgroundModes": ["fetch"]
+      },
+      "buildNumber": "1"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#16213e"
+      },
+      "package": "com.clothingtryon.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-camera",
+      "expo-image-picker",
+      "expo-media-library",
+      [
+        "expo-llm-mediapipe",
+        {
+          "ios": {
+            "enableGPU": true
+          },
+          "android": {
+            "enableGPU": true
+          }
+        }
+      ]
+    ],
+    "scheme": "clothingtryon"
+  }
+}
